@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A</title>
+    <Style>
+        .question {
+            font-weight: 600;
+            font-size: 25px;
+        }
+        .ans{
+            margin: 0 40px;
+        }
+    </Style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        common: ["Rubik", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="font-common text-center md:text-left">
+    <h2 class="text-4xl m-8">Welcome to Q&A</h2>
+    <div class="mx-8">
+        <div class="QA">
+            <p class="question">What are the differences between Map,Filter,ForEach and Find?</p>
+            <div class="ans ">
+                <p>All of them are array methods . The basic differences can be seen in their functionalities </p><br>
+
+                <p class="text-2xl">MAP : </p>
+                <ul class="list-disc mx-5">
+                    <li> Creates a new array by calling a function we write on each element from the original array.
+                    </li>
+                    <li> Each element is transformed by the given function.</li>
+                    <li> The original array is not modified.</li>
+                </ul>
+                <br>
+
+                <p class="text-2xl">Filter : </p>
+                <ul class="list-disc mx-5">
+                    <li> Creates a new array with all elements that pass a test implemented by the provided function.
+                    </li>
+                    <li>  It returns an array with the filtered elements, leaving out any elements that don't pass the test.</li>
+                    <li> The original array is not modified.</li>
+                </ul>
+
+                <br>
+                <p class="text-2xl">ForEach : </p>
+                <ul class="list-disc mx-5">
+                    <li> Executes a provided function once for each array element. 
+                    </li>
+                    <li> It does not return a new array, but rather executes a function for each element in the array.</li>
+                    <li> The original array is not modified in this method also.</li>
+                </ul>
+
+                <br>
+                <p class="text-2xl">Find : </p>
+                <ul class="list-disc mx-5">
+                    <li> Returns the value of the first element in an array that satisfies a provided testing function.
+                    </li>
+                    <li>  Returns undefined if no matching element is found.</li>
+                    <li> The original array is not modified.</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="QA my-10">
+            <p class="question">What are the differences between Local-Storage, Session-storage, Cookies?</p>
+            <div class="ans ">
+                <p>All of them are data storages for storing data in the browser or client side . The basic differences care given bellow :  </p><br>
+
+                <p class="text-2xl">Local-Storage : </p>
+                <p>Local storage is a key-value storage that allows data to be stored locally on a user's browser. It stores data permanently until it is deleted by user or our code. Local Storage is useful for storing data that needs to be stored across sessions,tabs. </p>
+                <br>
+                <p class="text-2xl">Session Storage: </p>
+                <p>
+                    Session storage is very similar to Local Storage,  a key-value storage mechanism that stores data on the browser. It differs from Local Storage in that, it stores data for the duration of the session. Once we close the browser tab or window, the data stored in Session Storage is gone. Session Storage is useful for storing data that needs to be cleared as soon as the user leaves the website or logs out</p>
+                <br>
+                <p class="text-2xl">Cookies: </p>
+                <p>
+                    Cookies are small text files that are stored on the client-side and are used to store user-specific data, such as login information. Cookies are sent with each HTTP request and can be accessed and modified by both the server-side and client-side. Cookies have an expiration date and can be set to expire after a specific amount of time, or when the user closes the browser.</p>
+                <br> 
+            </div>
+        </div>
+        <div class="QA my-10">
+            <p class="question">How does Event loop Work?</p>
+            <div class="ans ">
+                When a function is called in JavaScript, it is added to the call stack. The call stack shows the current state of the program.
+                The event loop constantly checks the call stack to see if there are any functions waiting to be executed.If the call stack is empty, the event loop checks the message queue to see if there are any pending tasks waiting to be executed. <br>
+                When an asynchronous function is called, it is moved outside of the JavaScript engine. After completion it puts a message in the message queue, which is then processed by the event loop. <br>
+                Then event loop takes the task and moves it from message queue to call stack <br>
+                Once the function has finished executing, it is removed from the call stack, and the event loop starts over.
+                
+            </div>
+        </div>
+        <div class="QA my-10">
+            <p class="question">What does the QuizTimer() do in the noChange.js?</p>
+            <div class="ans ">
+              The function is mainly built to keep track of the time for the quiz tests.
+              It takes a parameter called dismiss. 
+              If, it is true it clears the setInterval of timer by clearInterval and returns from function.
+              Else, it updates the innerHTML of the div with count ID which is meant for showing the time.
+              If the time count is greater than 60 it activates red alert on the timer by adding some classes to the div.
+              and the Timer contains the set interval that has interval of 1 second.
+                
+            </div>
+        </div>
+        <div class="QA my-10">
+            <p class="question">What does the ChooseQuiz() do in the noChange.js?</p>
+            <div class="ans ">
+                It takes two parameters Index and given_Answer. 
+                It is called when an answer is chosen from the quiz. 
+                It first stores the given ans in the question's object.
+                It also overwrites previously given answer if called again by clicking answers.
+                Then it calls the displayAnswers function. 
+            </div>
+        </div>
+        
+
+    </div>
+</body>
+
+</html>
